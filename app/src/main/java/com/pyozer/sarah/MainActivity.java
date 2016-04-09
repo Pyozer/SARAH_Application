@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -28,18 +29,18 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TextToSpeech.OnInitListener, TextToSpeech.OnUtteranceCompletedListener {
 
     protected TextView home_text;
     protected TextView textLog;
+    protected FloatingActionButton button_mic;
     private final int RESULT_SPEECH = 100;
+    protected TextToSpeech tts;
+
     private static final String DEBUG_TAG = "HttpExample";
-    /*InputStream is = null;
-    Bitmap bitmap = BitmapFactory.decodeStream(is);
-    ImageView imageView = (ImageView) findViewById(R.id.image_view);
-    imageView.setImageBitmap(bitmap);*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,21 +51,45 @@ public class MainActivity extends AppCompatActivity {
 
         home_text = (TextView) findViewById(R.id.home_text);
         textLog = (TextView) findViewById(R.id.textLog);
+        button_mic = (FloatingActionButton) findViewById(R.id.fab);
+
+        tts = new TextToSpeech(MainActivity.this, MainActivity.this);
 
         // On vérifie la connexion internet
         if(!checkInternet()){
+            // Si pas internet, on met un message et désactive le bouton micro
             home_text.setText(R.string.no_internet);
+            button_mic.setEnabled(false);
+        } else {
+            // Si internet, on active le bouton micro
+            button_mic.setEnabled(true);
         }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton button_mic = (FloatingActionButton) findViewById(R.id.fab);
+        button_mic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Au clique sur le bouton micro, on lance la reco vocal
                 promptSpeechInput(view);
             }
         });
     }
-    // Check Internet Connection
+
+    @Override
+    public void onUtteranceCompleted(String utteranceId) {
+        runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+                //Toast.makeText(MainActivity.this, "Utterence complete", Toast.LENGTH_SHORT).show();
+                // On réactive le bouton micro après le texte dit
+                button_mic.setEnabled(true);
+            }
+        });
+
+    }
+
+    // Permet de véirifier la connexion internet
     public boolean checkInternet() {
 
         ConnectivityManager connMgr = (ConnectivityManager)
@@ -97,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             textLog.setText(result);
+            // On vocalise le résultat
+            speechText(result);
         }
     }
 
@@ -144,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
         return new String(buffer);
     }
 
+    // On lance la reconnaissance vocal
     private void promptSpeechInput(View view) {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         // On défini la langue
@@ -159,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // On suit l'activité de la reconnaissance vocale
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -169,12 +198,13 @@ public class MainActivity extends AppCompatActivity {
 
                     ArrayList<String> text = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
-                    //home_text.setText(getString(R.string.you_say) + text.get(0));
                     home_text.setText(text.get(0));
                     //textLog.setText(R.string.send_request);
                     Toast.makeText(this, R.string.send_request, Toast.LENGTH_LONG).show();
 
+                    // On lance la requete http
                     prepareUrlRequest(text.get(0));
+
 
                 } else {
                     home_text.setText(getString(R.string.say_again));
@@ -187,10 +217,38 @@ public class MainActivity extends AppCompatActivity {
     // On prépare l'url avant la requete
     protected void prepareUrlRequest(String query) {
 
-        String url = "http://192.168.0.11:8888?emulate=" + Uri.encode(query);
+        String url = "http://88.164.230.33:8888?emulate=" + Uri.encode(query);
 
         new DownloadWebpageTask().execute(url);
 
+    }
+
+    // Permet de vocaliser le résultat
+    protected void speechText(String textToSpeech) {
+        if(!tts.isSpeaking()) {
+            HashMap<String, String> params = new HashMap<>();
+            params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "sampletext");
+            tts.speak(textToSpeech, TextToSpeech.QUEUE_ADD, params);
+            button_mic.setEnabled(false);
+        } else {
+            tts.stop();
+        }
+    }
+
+    @Override
+    public void onInit(int status) {
+        tts.setOnUtteranceCompletedListener(this);
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(tts!=null) {
+            tts.stop();
+            tts.shutdown();
+            tts = null;
+        }
+        super.onDestroy();
     }
 
     @Override
