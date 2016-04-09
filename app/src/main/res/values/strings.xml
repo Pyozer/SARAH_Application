@@ -12,8 +12,6 @@
     <string name="send_request">Requête envoyé !</string>
     <string name="you_say">Vous avez dit:\n</string>
     <string name="speech_prompt">Parlez</string>
-    <string name="speech_not_supported">Votre téléphone ne supporte pas Speech To Text :/</string>
-    <string name="say_again">Répétez, je n\'ai pas compris...</string>
 
     <!-- PAGE A PROPOS -->
     <string name="about_text">
@@ -73,5 +71,11 @@
     <string name="pref_others_ttsreturn_summary">Activez le retour du son sur votre téléphone</string>
 
     <string name="pref_ringtone_silent">Silent</string>
+    <string name="menu_speak">Parler</string>
+
+    <!-- ERREURS -->
+    <string name="no_internet">Vérifiez votre connexion internet</string>
+    <string name="speech_not_supported">Votre téléphone ne supporte pas Speech To Text :/</string>
+    <string name="say_again">Je n\'ai pas compris, répétez...</string>
 
 </resources>
