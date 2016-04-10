@@ -77,5 +77,6 @@
     <string name="no_internet">Vérifiez votre connexion internet</string>
     <string name="speech_not_supported">Votre téléphone ne supporte pas Speech To Text :/</string>
     <string name="say_again">Je n\'ai pas compris, répétez...</string>
+    <string name="no_result">Aucune réponse</string>
 
 </resources>

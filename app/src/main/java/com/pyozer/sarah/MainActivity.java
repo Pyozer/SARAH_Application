@@ -3,11 +3,13 @@ package com.pyozer.sarah;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.support.design.widget.FloatingActionButton;
@@ -32,15 +34,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements TextToSpeech.OnInitListener, TextToSpeech.OnUtteranceCompletedListener {
+public class MainActivity extends AppCompatActivity implements android.speech.tts.TextToSpeech.OnInitListener, android.speech.tts.TextToSpeech.OnUtteranceCompletedListener {
 
     protected TextView home_text;
     protected TextView textLog;
     protected FloatingActionButton button_mic;
     private final int RESULT_SPEECH = 100;
+
     protected TextToSpeech tts;
 
     private static final String DEBUG_TAG = "HttpExample";
+    protected SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         button_mic = (FloatingActionButton) findViewById(R.id.fab);
 
         tts = new TextToSpeech(MainActivity.this, MainActivity.this);
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         // On vérifie la connexion internet
         if(!checkInternet()){
@@ -73,20 +79,6 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 promptSpeechInput(view);
             }
         });
-    }
-
-    @Override
-    public void onUtteranceCompleted(String utteranceId) {
-        runOnUiThread(new Runnable() {
-
-            @Override
-            public void run() {
-                //Toast.makeText(MainActivity.this, "Utterence complete", Toast.LENGTH_SHORT).show();
-                // On réactive le bouton micro après le texte dit
-                button_mic.setEnabled(true);
-            }
-        });
-
     }
 
     // Permet de véirifier la connexion internet
@@ -115,15 +107,30 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
             try {
                 return downloadUrl(urls[0]);
             } catch (IOException e) {
-                return "Unable to retrieve web page. URL may be invalid.";
+                return "Impossible de se connecter à SARAH \n Vérifiez les paramètres de connexions";
             }
         }
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
-            textLog.setText(result);
-            // On vocalise le résultat
-            speechText(result);
+
+            Boolean return_tts = preferences.getBoolean("return_tts", true);
+
+            if((result.trim().length() < 1 || result.isEmpty()) && result != "NOSPEAK") {
+                textLog.setText(R.string.no_result);
+                if(return_tts) {
+                    speechText("Désolé je n'ai pas compris");
+                }
+
+            } else if(result == "NOSPEAK"){
+                Toast.makeText(MainActivity.this, "REQUETE SCRIBE FAITE", Toast.LENGTH_SHORT).show();
+            } else {
+                textLog.setText(result);
+                // On vocalise le résultat
+                if(return_tts) {
+                    speechText(result);
+                }
+            }
         }
     }
 
@@ -139,8 +146,8 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         try {
             URL url = new URL(myurl);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setReadTimeout(10000 /* milliseconds */);
-            conn.setConnectTimeout(15000 /* milliseconds */);
+            conn.setReadTimeout(2000 /* milliseconds */);
+            conn.setConnectTimeout(2100 /* milliseconds */);
             conn.setRequestMethod("GET");
             conn.setDoInput(true);
             // Starts the query
@@ -151,6 +158,9 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
             // Convert the InputStream into a string
             String contentAsString = readIt(is, len);
+            if(myurl.indexOf("sarah/scribe") > 0) {
+                contentAsString = "NOSPEAK";
+            }
             return contentAsString;
 
             // Makes sure that the InputStream is closed after the app is
@@ -217,9 +227,38 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     // On prépare l'url avant la requete
     protected void prepareUrlRequest(String query) {
 
-        String url = "http://88.164.230.33:8888?emulate=" + Uri.encode(query);
+        String serverIP = preferences.getString("serverIp", "192.168.0.11");
+        String serverPORT = preferences.getString("serverPort", "8080");
+        String clientIP = preferences.getString("clientIp", "192.168.0.11");
+        String clientPORT = preferences.getString("clientPort", "8888");
 
+        // On vérifie que le prénom est dit
+        if(query.indexOf("Jarvis") < 0) {
+            query = "Jarvis " + query;
+        }
+        // Requete au client
+        String url = "http://" + clientIP + ":" + clientPORT + "?emulate=" + Uri.encode(query);
         new DownloadWebpageTask().execute(url);
+        // Requete au Serveur
+        Boolean scribe_on = preferences.getBoolean("scribe", true);
+        if(scribe_on) {
+            String urlScribe = "http://" + serverIP + ":" + serverPORT + "/sarah/scribe?reco=" + Uri.encode(query) + "&confidence=0.95";
+            new DownloadWebpageTask().execute(urlScribe);
+        }
+
+    }
+
+    @Override
+    public void onUtteranceCompleted(String utteranceId) {
+        runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+                //Toast.makeText(MainActivity.this, "Utterence complete", Toast.LENGTH_SHORT).show();
+                // On réactive le bouton micro après le texte dit
+                button_mic.setEnabled(true);
+            }
+        });
 
     }
 
@@ -227,8 +266,8 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     protected void speechText(String textToSpeech) {
         if(!tts.isSpeaking()) {
             HashMap<String, String> params = new HashMap<>();
-            params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "sampletext");
-            tts.speak(textToSpeech, TextToSpeech.QUEUE_ADD, params);
+            params.put(android.speech.tts.TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "sampletext");
+            tts.speak(textToSpeech, android.speech.tts.TextToSpeech.QUEUE_ADD, params);
             button_mic.setEnabled(false);
         } else {
             tts.stop();
