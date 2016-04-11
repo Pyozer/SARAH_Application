@@ -1,12 +1,13 @@
 # Application Android pour S.A.R.A.H
 
 
-**/!\ EN COURS DE DEVELOPPEMENT BIENTOT DISPONIBLE /!\\**
+**/!\EN COURS DE DEVELOPPEMENT/!\\**
 
 Pourquoi en refaire une ?
 -------------------------
 
 L'application actuel ne peut fonctionner avec le plugin Scribe.
+Et aussi car l'interface ne me plait pas ;)
 
 Que pourra t'elle faire ?
 -------------------------
@@ -22,14 +23,3 @@ Avantages:
 - Fonctionne avec le plugin Scribe
 - Peut faire parler S.A.R.A.H avec la phrase de votre choix, que vous aurez prononcé ou écrite
 - Une interface plus actuelle (Matérial Design de Google)
-
-Désavantages:
--------------
-- Neccessite une modification du plugin Scribe (ne plus être en https notamment)
-- Le besoin de se passer du Scribe.speak sinon c'est le PC qui répond et non l'application.
-
-Quels sont les modifications exactement ?
------------------------------------------
-- Ajouter un setTimeout a Scribe d'environ 2-3 secondes.
-- Passer du https au http (comme le certificat est non valide)
-- Ne plus utiliser ScribeSpeak mais les callback. (Sinon c'est le pc qui parle et non l'application)
