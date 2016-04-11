@@ -1,0 +1,17 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="return_tts"
+        android:title="@string/pref_others_ttsreturn"
+        android:summary="@string/pref_others_ttsreturn_summary"/>
+
+    <EditTextPreference
+        android:defaultValue="@string/pref_others_default_sarah_name"
+        android:inputType="textCapWords"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:key="sarah_name"
+        android:title="@string/pref_others_sarah_name" />
+
+</PreferenceScreen>
