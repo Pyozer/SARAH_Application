@@ -6,7 +6,7 @@
 Pourquoi en refaire une ?
 -------------------------
 
-L'application actuel ne peut fonctionner avec le plugin Scribe.
+L'application actuelle ne peut fonctionner avec le plugin Scribe.
 
 Que pourra t'elle faire ?
 -------------------------
@@ -25,11 +25,17 @@ Avantages:
 
 Désavantages:
 -------------
-- Neccessite une modification du plugin Scribe (ne plus être en https notamment)
+- Nécessite une modification du plugin Scribe (ne plus être en https notamment)
 - Le besoin de se passer du ScribeSpeak sinon c'est le PC qui répond et non l'application.
 
-Quels sont les modifications exactement ?
+Quelles sont les modifications exactement ?
 -----------------------------------------
 - Ajouter un setTimeout à Scribe d'environ 2-3 secondes.
 - Passer du https au http (A cause du certificat non valide)
 - Ne plus utiliser ScribeSpeak mais les callback habituels. (Sinon c'est le pc qui parle et non l'application)
+
+![Preview Interface](https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/Preview_interface.png "Aperçu de l'interface")
+
+![Preview Interface menu](https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/Preview_menu.png "Aperçu de l'interface menu")
+
+![Preview Interface parler](https://github.com/Pyozer/SARAH_Application/blob/master/Preview/Preview_speak.png "Aperçu de l'interface parler")
