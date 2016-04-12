@@ -32,7 +32,7 @@ Quelles sont les modifications exactement ?
 -----------------------------------------
 - Ajouter un setTimeout à Scribe d'environ 2-3 secondes.
 - Passer du https au http (A cause du certificat non valide)
-- Ne plus utiliser ScribeSpeak mais les callback habituels. (Sinon c'est le pc qui parle et non l'application)
+- Ne plus utiliser ScribeSpeak mais les callbacks habituels. (Sinon c'est le PC qui parle et non l'application)
 
 <img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/Preview_interface.png" alt="Aperçu de l'interface" width="300" style="display: inline-block" />
 <img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/Preview_menu.png" alt="Aperçu de l'interface" width="300" style="display: inline-block" />
