@@ -26,10 +26,10 @@ Avantages:
 Désavantages:
 -------------
 - Neccessite une modification du plugin Scribe (ne plus être en https notamment)
-- Le besoin de se passer du Scribe.speak sinon c'est le PC qui répond et non l'application.
+- Le besoin de se passer du ScribeSpeak sinon c'est le PC qui répond et non l'application.
 
 Quels sont les modifications exactement ?
 -----------------------------------------
-- Ajouter un setTimeout a Scribe d'environ 2-3 secondes.
-- Passer du https au http (comme le certificat est non valide)
-- Ne plus utiliser ScribeSpeak mais les callback. (Sinon c'est le pc qui parle et non l'application)
+- Ajouter un setTimeout à Scribe d'environ 2-3 secondes.
+- Passer du https au http (A cause du certificat non valide)
+- Ne plus utiliser ScribeSpeak mais les callback habituels. (Sinon c'est le pc qui parle et non l'application)
