@@ -34,8 +34,8 @@ Quelles sont les modifications exactement ?
 - Passer du https au http (A cause du certificat non valide)
 - Ne plus utiliser ScribeSpeak mais les callback habituels. (Sinon c'est le pc qui parle et non l'application)
 
-![Preview Interface](https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/Preview_interface.png "Aperçu de l'interface")
+<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/Preview_interface.png" alt="Aperçu de l'interface" style="width: 33%;" />
 
-![Preview Interface menu](https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/Preview_menu.png "Aperçu de l'interface menu")
+<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/Preview_menu.png" alt="Aperçu de l'interface" style="width: 33%;" />
 
-![Preview Interface parler](https://github.com/Pyozer/SARAH_Application/blob/master/Preview/Preview_speak.png "Aperçu de l'interface parler")
+<img src="https://github.com/Pyozer/SARAH_Application/blob/master/Preview/Preview_speak.png" alt="Aperçu de l'interface" style="width: 33%;" />
