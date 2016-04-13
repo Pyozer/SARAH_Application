@@ -33,6 +33,7 @@ Quelles sont les modifications exactement ?
 - Ajouter un setTimeout à Scribe d'environ 2-3 secondes.
 - Passer du https au http (A cause du certificat non valide)
 - Ne plus utiliser ScribeSpeak mais les callbacks habituels. (Sinon c'est le PC qui parle et non l'application)
+
 **Vous trouverez le plugin modifié sur ce github**
 
 Petit aperçu de l'interface:
