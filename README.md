@@ -1,7 +1,7 @@
 # Application Android pour S.A.R.A.H
 
 
-**/!\ EN COURS DE DEVELOPPEMENT BIENTOT DISPONIBLE /!\\**
+**/!\ VERSION BETA /!\\**
 
 Pourquoi en refaire une ?
 -------------------------
