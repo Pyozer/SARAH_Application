@@ -34,7 +34,7 @@ Quelles sont les modifications exactement ?
 - Passer du https au http (A cause du certificat non valide)
 - Ne plus utiliser ScribeSpeak mais les callbacks habituels. (Sinon c'est le PC qui parle et non l'application)
 
-**Vous trouverez le plugin modifié sur ce github**
+**Vous trouverez le plugin modifié sur ce github (pour sarah v3, modifiez juste "var v4 = true;" en "var v4 = false;" dans le scribe.js)**
 
 Petit aperçu de l'interface:
 ----------------------------
