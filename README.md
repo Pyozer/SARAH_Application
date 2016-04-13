@@ -39,6 +39,6 @@ Quelles sont les modifications exactement ?
 Petit aperçu de l'interface:
 ----------------------------
 
-<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/PreviewInterface.png" alt="Aperçu de l'interface" width="230" style="display: inline-block" />
-<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/PreviewMenu.png" alt="Aperçu du menu" width="230" style="display: inline-block" />
-<img src="https://github.com/Pyozer/SARAH_Application/blob/master/Preview/PreviewSpeak.png" alt="Aperçu de l'interface speak" width="230" style="display: inline-block" />
+<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/PreviewInterface.png" alt="Aperçu de l'interface" width="250" style="display: inline-block" />
+<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/PreviewMenu.png" alt="Aperçu du menu" width="250" style="display: inline-block" />
+<img src="https://github.com/Pyozer/SARAH_Application/blob/master/Preview/PreviewSpeak.png" alt="Aperçu de l'interface speak" width="250" style="display: inline-block" />
