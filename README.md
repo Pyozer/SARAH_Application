@@ -35,5 +35,5 @@ Quelles sont les modifications exactement ?
 - Ne plus utiliser ScribeSpeak mais les callbacks habituels. (Sinon c'est le PC qui parle et non l'application)
 
 <img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/Preview_interface.png" alt="Aperçu de l'interface" width="300" style="display: inline-block" />
-<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/Preview_menuNew.png" alt="Aperçu de l'interface" width="300" style="display: inline-block" />
-<img src="https://github.com/Pyozer/SARAH_Application/blob/master/Preview/Preview_speak.png" alt="Aperçu de l'interface" width="300" style="display: inline-block" />
+<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/Preview_menunew.png" alt="Aperçu de l'interface" width="300" style="display: inline-block" />
+<img src="https://github.com/Pyozer/SARAH_Application/blob/master/Preview/Preview_speaknew.png" alt="Aperçu de l'interface" width="300" style="display: inline-block" />
