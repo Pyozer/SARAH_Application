@@ -701,6 +701,7 @@ exports.init = function(SARAH) {
                     partial: decodeURI(txt),
                     confidence: req.query.confidence
                 };
+                var reco_complete = false;
             }
             res.write(msg);
             console.log(msg);
@@ -710,6 +711,12 @@ exports.init = function(SARAH) {
             if (v4) sarahConfig = Config.http;
             else sarahConfig = SARAH.ConfigManager.getConfig().http;
             var url_serveur_sarah = "http://" + sarahConfig.ip + ":" + sarahConfig.port + "/sarah/scribe";
+
+            if(req.query.source) {
+                var timeoutDuration = 2000;
+            } else {
+                var timeoutDuration = 1;
+            }
             var timeout = setTimeout(function() {
                 request({ url: url_serveur_sarah, qs: params }, function(err, response, body) {
                     if (err || response.statusCode != 200) {
@@ -729,7 +736,7 @@ exports.init = function(SARAH) {
                     }
                     res.end('</body></html>');
                 });
-            }, 2000);
+            }, timeoutDuration);
         }
 
     });
