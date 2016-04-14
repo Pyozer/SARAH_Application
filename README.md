@@ -3,6 +3,59 @@
 
 **/!\ VERSION BETA /!\\**
 
+Installation:
+=============
+
+*Si vous n'avez pas le plugin Scribe passez à l'étape 2 directement*
+**Etape 1: Préparation de S.A.R.A.H**
+
+- Télécharger le .zip de ce projet github.
+- Récupérez le scribe.js présent dans le dossier scribe de l'archive zip.
+- Remplacer le scribe.js actuel (présent dans /plugins/scribe de S.A.R.A.H) par celui-ci.
+- Si vous avez SARAH V3, remplacez la ligne "var v4 = true;" par "var v4 = false;" dans le scribe.js que vous venez de mettre.
+
+**Etape 2: Installation de l'application**
+
+- Dans le fichier .zip que vous avez téléchargé dans l'étape 1, récupérez le fichier .apk
+- Transferez celui-ci sur votre téléphone/tablette (via un cable USB ou avec l'application Portal de Pushbullet par exemple)
+- Avant toute chose vous devez avoir autorisé les Sources Inconnus via les paramètres de votre téléphone (dans paramètres -> sécurité)
+- Une fois le .apk transferé, appuyez dessus pour l'ouvrir (sur votre téléphone/tablette), et lancez l'installation.
+- Une fois installé, ouvrez l'application.
+
+**Etape 3: Configuration de l'application**
+
+- Ouvrez le menu de navigation (en glissant de gauche à droite ou en appuyant sur le bouton hamburger)
+
+*Le côté client*
+
+- Allez dans "Paramètres" puis dans "Client"
+- Saisissez l'adresse ip de l'ordinateur ou est installé S.A.R.A.H
+*Si vous ne la connaissez pas: Ouvrez l'invite de commande de votre ordinateur, et saisissez ipconfig, et cherchez "Adresse Ipv4"*
+- Saisissez aussi le port du client S.A.R.A.H (par default: 8888)
+
+*Le côté Scribe*
+
+- Allez dans "Paramètres" puis dans "Scribe"
+- **Si vous n'utilisez pas Scribe désactivez "Utilisez vous Scribe" et passez directement à l'étape d'après**
+- Saissiez l'adresse ip de l'ordinateur où est installé le serveur de S.A.R.A.H
+- Même ip que précédamment (si vous avez le serveur et client sur la même machine)
+- Saissisez aussi le port du plugin Scribe (par default: 4300)
+
+*Autres paramètres*
+
+- Allez dans "Paramètres" puis dans "Autres"
+- Saissiez le nom que vous avez donné à S.A.R.A.H, exemple: Sarah, Jarvis, Eva, Mathilde,...
+- Si vous ne souhaitez pas que l'application vocalise la réponse de S.A.R.A.H, désactivez "Retour TTS"
+
+*Informations complémentaires*
+Si vous souhaitez utilisez S.A.R.A.H à l'extérieur de chez vous, vous deverez ouvrir les ports 8888 (client) et 4300 (scribe) de votre box internet
+Si vous souhaitez aussi acceder à l'interface de S.A.R.A.H ouvrez aussi le port 8080.
+(Bien sur, si vous avez changé les ports par default, ouvrez les ports correspondants)
+
+
+Voilà si tout va bien, vous pouvez maintenant parler à SARAH via l'application
+
+
 Pourquoi en refaire une ?
 -------------------------
 
