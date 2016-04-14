@@ -49,6 +49,7 @@ Installation:
 - Si vous ne souhaitez pas que l'application vocalise la réponse de S.A.R.A.H, désactivez "Retour TTS"
 
 *Informations complémentaires*
+
 Si vous souhaitez utilisez S.A.R.A.H à l'extérieur de chez vous, vous deverez ouvrir les ports 8888 (client) et 4300 (scribe) de votre box internet
 Si vous souhaitez aussi acceder à l'interface de S.A.R.A.H ouvrez aussi le port 8080.
 (Bien sur, si vous avez changé les ports par default, ouvrez les ports correspondants)
