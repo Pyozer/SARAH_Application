@@ -7,6 +7,7 @@ Installation:
 =============
 
 *Si vous n'avez pas le plugin Scribe passez à l'étape 2 directement*
+
 **Etape 1: Préparation de S.A.R.A.H**
 
 - Télécharger le .zip de ce projet github.
