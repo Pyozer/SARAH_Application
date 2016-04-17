@@ -45,6 +45,7 @@ Installation:
 *Autres paramètres*
 
 - Allez dans "Paramètres" puis dans "Autres"
+- Choissisez si vous souhaitez que l'application ajoute automatiquement le nom de S.A.R.A.H si il n'est pas présent ou bien ne l'ajoute jamais
 - Saissiez le nom que vous avez donné à S.A.R.A.H, exemple: Sarah, Jarvis, Eva, Mathilde,...
 - Si vous ne souhaitez pas que l'application vocalise la réponse de S.A.R.A.H, désactivez "Retour TTS"
 
