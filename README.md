@@ -114,6 +114,8 @@ Quelles sont les modifications exactement ?
 Petit aperçu de l'interface:
 ----------------------------
 
-<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/PreviewInterface.png?ver=1.9" alt="Aperçu de l'interface principale" width="260" style="display: inline-block" />
-<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/PreviewMenu.png?ver=1.9" alt="Aperçu du menu de navigation" width="260" style="display: inline-block" />
-<img src="https://github.com/Pyozer/SARAH_Application/blob/master/Preview/PreviewSpeak.png?ver=1.9" alt="Aperçu de l'interface SPEAK" width="260" style="display: inline-block" />
+<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/PreviewInterface.png?ver=2.0" alt="Aperçu de l'interface principale" width="260" style="display: inline-block" />
+<img src="https://raw.githubusercontent.com/Pyozer/SARAH_Application/master/Preview/PreviewMenu.png?ver=2.0" alt="Aperçu du menu de navigation" width="260" style="display: inline-block" />
+<img src="https://github.com/Pyozer/SARAH_Application/blob/master/Preview/PreviewSpeak.png?ver=2.0" alt="Aperçu de l'interface SPEAK" width="260" style="display: inline-block" />
+<img src="https://github.com/Pyozer/SARAH_Application/blob/master/Preview/PreviewSettings.png?ver=2.0" alt="Aperçu de l'interface Paramètres" width="260" style="display: inline-block" />
+<img src="https://github.com/Pyozer/SARAH_Application/blob/master/Preview/PreviewHelp.png?ver=2.0" alt="Aperçu de l'interface d'aide" width="260" style="display: inline-block" />
