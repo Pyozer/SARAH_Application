@@ -3,6 +3,22 @@
 
 **/!\ VERSION BETA /!\\**
 
+Pourquoi en refaire une ?
+-------------------------
+
+L'application actuelle ne peut fonctionner avec le plugin Scribe.
+L'interface n'était pas à mon goût aussi ;)
+
+Que pourra t'elle faire ?
+-------------------------
+
+Cette nouvelle version a pour but de pouvoir utiliser tous les plugins, Scribe ou non.
+Si vous n'avez pas Scribe ce n'est pas un problème, il vous suffira de décocher "Scribe" dans les paramètres.
+
+Cette application permettera aussi de faire dire une phrase à S.A.R.A.H (que vous aurez prononcé ou écrite).
+Mais aussi pouvoir executer des actions que vous aurez définis (ex: Il est quelle heure, Quel temps fait-il )
+
+
 Installation:
 =============
 
@@ -72,22 +88,6 @@ Si vous souhaitez aussi acceder à l'interface de S.A.R.A.H ouvrez aussi le port
 
 
 Voilà si tout va bien, vous pouvez maintenant parler à SARAH via l'application
-
-
-Pourquoi en refaire une ?
--------------------------
-
-L'application actuelle ne peut fonctionner avec le plugin Scribe.
-L'interface n'était pas à mon goût aussi ;)
-
-Que pourra t'elle faire ?
--------------------------
-
-Cette nouvelle version a pour but de pouvoir utiliser tous les plugins, Scribe ou non.
-Si vous n'avez pas Scribe ce n'est pas un problème, il vous suffira de décocher "Scribe" dans les paramètres.
-
-Cette application permettera aussi de faire dire une phrase à S.A.R.A.H (que vous aurez prononcé ou écrite).
-**Peut-être bientôt:** Pouvoir executer des actions que vous aurez définis
 
 Avantages:
 ----------
