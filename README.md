@@ -35,9 +35,9 @@ Installation:
 
 *Méthode 1:* (plus simple)
 - Ouvrez le navigateur de votre téléphone
-- Allez sur cette page
+- Allez sur cette page, et cliquez sur "View Code"
 - Cliquez sur le fichier apk
-- Mettez vous en version Desktop, et cliquez sur "Raw", le fichier .apk se télécharge
+- Mettez vous en version Desktop, et cliquez sur "View Raw", le fichier .apk se télécharge
 - Il vous reste plus qu'à l'ouvrir et à lancer l'installation
 
 *Méthode 2:*
