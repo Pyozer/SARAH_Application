@@ -33,6 +33,14 @@ Installation:
 
 **Etape 2: Installation de l'application**
 
+*Méthode 1:* (plus simple)
+- Ouvrez le navigateur de votre téléphone
+- Allez sur cette page
+- Cliquez sur le fichier apk
+- Mettez vous en version Desktop, et cliquez sur "Raw", le fichier .apk se télécharge
+- Il vous reste plus qu'à l'ouvrir et à lancer l'installation
+
+*Méthode 2:*
 - Dans le fichier .zip que vous avez téléchargé dans l'étape 1, récupérez le fichier .apk
 - Transferez celui-ci sur votre téléphone/tablette (via un cable USB ou avec l'application Portal de Pushbullet par exemple)
 - Avant toute chose vous devez avoir autorisé les Sources Inconnus via les paramètres de votre téléphone (dans paramètres -> sécurité)
