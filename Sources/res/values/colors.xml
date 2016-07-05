@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#257DC1</color>
+    <color name="colorPrimaryDark">#165994</color>
+    <color name="colorAccent">#197fe6</color>
+    <color name="colorFab">#333333</color>
+
+    <color name="black">#000</color>
+    <color name="orange">#FA0</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#E53935</color>
+
+    <color name="bg_gradient_start">#31244e</color>
+    <color name="bg_gradient_end">#6b394c</color>
+    <color name="colorTopSplash">#5b2d3f</color>
+</resources>

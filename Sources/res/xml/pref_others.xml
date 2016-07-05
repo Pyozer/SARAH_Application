@@ -1,0 +1,41 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="S.A.R.A.H">
+        <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+        <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/sarah_use_entries"
+            android:entryValues="@array/sarah_use_entries_values"
+            android:key="sarah_set_her_name"
+            android:title="Ajouter le nom de S.A.R.A.H" />
+
+        <EditTextPreference
+            android:defaultValue="@string/pref_others_default_sarah_name"
+            android:title="@string/pref_others_sarah_name"
+            android:key="sarah_name"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:selectAllOnFocus="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Audio">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="return_tts"
+            android:title="@string/pref_others_ttsreturn"
+            android:summary="@string/pref_others_ttsreturn_summary"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="tts_on_pc"
+            android:title="@string/pref_others_ttsreturn_pc"
+            android:summary="@string/pref_others_ttsreturn_summary_pc"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

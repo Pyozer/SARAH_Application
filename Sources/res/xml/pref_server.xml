@@ -1,0 +1,27 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="use_speak_plugin"
+        android:title="@string/pref_server"
+        android:summary="@string/pref_server_summuray" />
+
+    <EditTextPreference
+        android:dependency="use_speak_plugin"
+        android:defaultValue="@string/pref_server_default_serverIp"
+        android:inputType="number|numberDecimal"
+        android:digits="0123456789."
+        android:key="serverIp"
+        android:selectAllOnFocus="false"
+        android:title="@string/pref_server_serverIp" />
+
+
+    <EditTextPreference
+        android:dependency="use_speak_plugin"
+        android:defaultValue="@string/pref_server_default_serverPort"
+        android:inputType="number"
+        android:key="serverPort"
+        android:selectAllOnFocus="false"
+        android:title="@string/pref_server_serverPort" />
+
+</PreferenceScreen>

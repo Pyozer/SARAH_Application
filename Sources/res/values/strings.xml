@@ -1,0 +1,148 @@
+<resources>
+    <string name="app_name">S.A.R.A.H</string>
+    <string name="version_app">2.6</string>
+    <string name="version_app_menu">v2.6</string>
+
+    <!-- MENU -->
+    <string name="menu_speak">SARAH parle</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="menu_help">Aide</string>
+    <string name="menu_about">A propos</string>
+    <string name="menu_update">Mise à jour</string>
+
+    <string name="navigation_drawer_open">Ouvrir menu navigation</string>
+    <string name="navigation_drawer_close">Fermer menu navigation</string>
+    <!-- PAGE HOME -->
+    <string name="home_text">Que puis-je faire pour vous ?</string>
+    <string name="tap_on_mic">Appuyez pour parler</string>
+    <string name="speech_prompt">Je vous écoute</string>
+
+    <!-- PAGE ACTION -->
+    <string name="action_title">Executer une action</string>
+    <string name="action_prompt">Choisissez une action</string>
+    <string name="action_execute">Executer</string>
+
+    <string name="action_add_title">Ajouter une action</string>
+    <string name="action_hint_request">Requête à effectuer (ex: Il est quelle heure)</string>
+    <string name="action_add_save">Enregistrer</string>
+    <string name="action_add_exit">Annuler</string>
+    <string name="action_add_success">L\'action a été ajouté.</string>
+
+    <!-- PAGE ACTION DELETE -->
+    <string name="action_delete_title">Supprimer une action</string>
+    <string name="action_delete_subtitle">Selectionnez les actions à supprimer</string>
+    <string name="action_deletebutton">Supprimer</string>
+
+    <string name="action_delete_success">Élément(s) supprimé(s) avec succès.</string>
+    <string name="action_delete_success_empty">Plus aucune action :/\nUne action par défaut a été ajouté.</string>
+
+    <string name="action_delete_all">Tout supprimer</string>
+    <string name="action_all_deleted">Toutes les actions ont été supprimés</string>
+
+    <string name="action_delete_dialog_title">Etes-vous sûr ?</string>
+    <string name="action_delete_dialog_message">Vous ne pourrez récupérer les actions supprimés !</string>
+    <string name="action_delete_dialog_cancel">Annuler</string>
+    <string name="action_delete_dialog_valid">Tout supprimer</string>
+
+    <!-- PAGE SPEAK -->
+    <string name="button4Speak">Parle</string>
+    <string name="textSpeak">Faire parler S.A.R.A.H</string>
+    <string name="speak_write_text">Saisissez un texte</string>
+    <string name="send_request">Requête envoyé !</string>
+
+    <!-- PAGE A PROPOS -->
+    <string name="about_text">
+        <b>Qu\'est-ce que c\'est ?</b>
+        \n\n
+
+        Cette application est un client pour S.A.R.A.H.\n
+        Elle vous permet d\'utiliser S.A.R.A.H via votre téléphone/tablette. Elle est compatible avec le plugin Scribe.\n\n
+
+        <b>Comment ça fonctionne ?</b>
+        \n\n
+        
+        L\'application va récupéré ce qu\'a compris la reconnaissance Google puis va envoyer une première requête pour Scribe (si vous avez le plugin) et une seconde pour l\'émulation.\n
+        Puis l\'application vous retournera ensuite la réponse de S.A.R.A.H.\n
+        Elle vous vocalisera la réponse si vous avez activé le retour TTS dans les paramètres.
+        Si vous voulez aussi un retour TTS sur le PC où est S.A.R.A.H et que vous être en V4, vous deverez installé le plugin Speak. (voir sur le github)
+    </string>
+
+    <!-- PAGE HELP -->
+    <string name="help_text">
+        <b>Les pré-requis:</b>
+        \n\n
+        S.A.R.A.H d\'installé et de lancé.\n
+        Les ports de votre box ouverts si vous voulez utiliser cette application en dehors de chez vous.\n
+        Avoir configurer les paramètres de connexion sur l\'application.\n
+        Si vous utilisez Scribe, vous deverez très légèrement modifier le plugin (+ d\'infos sur le github) et l\'activez le via les paramètres.\n\n
+
+        <b>Besoin d\'aide ?</b>
+        \n\n
+        Si vous avez des soucis pour l\'installation ou autre, n\'hésitez pas à aller sur https://github.com/pyozer/SARAH_Application pour plus de renseignements. \n\n
+    </string>
+
+    <!-- PAGE PARAMETRE -->
+
+    <!-- Server side settings -->
+    <string name="pref_header_scribe">Scribe</string>
+
+    <string name="pref_scribe">Utilisez vous scribe ?</string>
+    <string name="pref_scribe_summuray">Si vous utilisez scribe</string>
+    <string name="pref_scribe_ip">Ip du serveur</string>
+    <string name="pref_scribe_default_ip">192.168.0.1</string>
+    <string name="pref_scribe_port">Port du serveur</string>
+    <string name="pref_scribe_default_port">4300</string>
+
+    <!-- Client side settings -->
+    <string name="pref_header_client">Client</string>
+
+    <string name="pref_client_clientIp">Ip du Client</string>
+    <string name="pref_client_default_clientIp">192.168.0.1</string>
+    <string name="pref_client_clientPort">Port du Client</string>
+    <string name="pref_client_default_clientPort">8888</string>
+
+    <!-- Serveur side settings -->
+    <string name="pref_header_server">Serveur</string>
+
+    <string name="pref_server">Passer par le plugin Speak</string>
+    <string name="pref_server_summuray">Permet de gérer le retour audio (V4 uniquement)</string>
+    <string name="pref_server_default_serverIp">192.168.0.1</string>
+    <string name="pref_server_default_serverPort">8080</string>
+    <string name="pref_server_serverIp">IP du serveur</string>
+    <string name="pref_server_serverPort">Port du serveur</string>
+
+    <!-- Others settings -->
+    <string name="pref_header_others">Autres</string>
+
+    <string name="pref_others_ttsreturn">Activer le retour TTS</string>
+    <string name="pref_others_ttsreturn_summary">Activez le retour du son sur votre téléphone</string>
+    <string name="pref_others_ttsreturn_pc">Retour TTS sur le PC</string>
+    <string name="pref_others_ttsreturn_summary_pc">Activez la vocalisation sur le PC (V4 uniquement)</string>
+    <string name="pref_others_default_sarah_name">Sarah</string>
+    <string name="pref_others_sarah_name">Nom de S.A.R.A.H</string>
+
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <!-- Update -->
+    <string name="update_check_text">Vérifier les mises à jours</string>
+    <string name="update_check_noupdate">Vous avez la dernière version de l\'application :D</string>
+    <string name="update_download_last">Télécharger la dernière version</string>
+    <string name="update_text_title">Vérifiez si vous possédez la dernière version de l\'application.</string>
+
+    <string name="update_dialog_title">Mise à jour</string>
+    <string name="update_dialog_newupdate">Une version plus récente existe !</string>
+    <string name="update_dialog_download">Télécharger</string>
+
+    <!-- ERREURS -->
+    <string name="no_internet">Vérifiez votre connexion internet.</string>
+    <string name="speech_not_supported">Votre téléphone ne supporte pas Speech To Text :/</string>
+    <string name="say_again">Je n\'ai pas compris, répétez…</string>
+    <string name="no_result">Aucune réponse</string>
+    <string name="no_connexion_scribe">Impossible de se connecter à Scribe.</string>
+    <string name="no_connexion_client">Impossible de se connecter à SARAH.</string>
+    <string name="no_connexion_github">Impossible de récupérer la dernière version.</string>
+    <string name="error_field_required">Veuillez saisir un texte.</string>
+    <string name="error_no_action">Aucune action enregistré</string>
+    <string name="error_item_empty">Aucune action sélectionné. Ajoutez en une.</string>
+    <string name="error_item_nocheck">Aucune action sélectionné.</string>
+</resources>

@@ -1,0 +1,19 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:defaultValue="@string/pref_client_default_clientIp"
+        android:inputType="number|numberDecimal"
+        android:digits="0123456789."
+        android:key="clientIp"
+        android:selectAllOnFocus="false"
+        android:title="@string/pref_client_clientIp" />
+
+
+    <EditTextPreference
+        android:defaultValue="@string/pref_client_default_clientPort"
+        android:inputType="number"
+        android:key="clientPort"
+        android:selectAllOnFocus="false"
+        android:title="@string/pref_client_clientPort" />
+
+</PreferenceScreen>
